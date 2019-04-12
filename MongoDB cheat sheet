@@ -1,0 +1,61 @@
+Mongodb comparision with rdbms:
+Collection( Table in RDBMS scenario)
+Document(Row/Tuple in RDBMS scenario)
+Fields(Columns in RDBMS scenario)
+
+Mongo DB cheat Sheet:
+
+Run the MongoDB shell: mongo
+
+
+Database:
+
+Create a database/Connect to existing database: use database_name
+Note: If the database name you mentioned is already present then this command will connect you to the database. However if the database doesn’t exist then this will create the database with the given name and connect you to it.
+
+Drop a database: use database_name 
+				 db.dropDatabase()
+				
+List all the databases: show dbs
+
+Check the currently connected database: db
+
+Collections: 
+
+creating a collection: db.createCollection(collection_name, options)
+
+Show list of collections: show collections
+
+drop a collection: db.collection_name.drop()
+
+
+Document:
+							
+Create document /insert data to collection: db.colection_name.insert({key1:"value1", key2:"value2"....})
+							
+Query data from collection: db.Collection_name.find()
+							db.Collection_name.find().forEach(printjson)    //json format output
+							db.Collection_name.find.pretty()    //well formatted way
+							db.Collection.findOne()
+							db.collection_name.find().limit(number_of_documents)    //limits number of documents
+Update Document:db.collection_name.update(update_criteria, DataToBeUpdated)
+
+Save Document: db.Collection_name.save()
+
+Delete a document: db.collection_name.remove(delete_criteria)
+
+Skipping the given number of documents in the Query result: b.collection_name.skip(n)
+
+Sort Documents: db.collection_name.find().sort()
+
+Indexing:
+
+create index : db.collection_name.createIndex({field_name: 1 or -1})   //1 for ascending and -1 for descending
+
+Finding the indexes in a collection: db.collection_name.getIndexes()
+
+Drop a specific index: db.collection_name.dropIndex({index_name: 1})
+
+Drop all indexes: db.collection_name.dropIndexes()
+
+Delete all documents: db.collection_name.remove({})
